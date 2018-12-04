@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">mor</string>
+    <string name="text_setting">设置</string>
 </resources>
