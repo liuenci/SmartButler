@@ -21,6 +21,7 @@ import smartbutler.cier.com.smartbutler.fragment.GirlFragment;
 import smartbutler.cier.com.smartbutler.fragment.UserFragment;
 import smartbutler.cier.com.smartbutler.fragment.WechatFragment;
 import smartbutler.cier.com.smartbutler.ui.SettingActivity;
+import smartbutler.cier.com.smartbutler.utils.L;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //TabLayout
