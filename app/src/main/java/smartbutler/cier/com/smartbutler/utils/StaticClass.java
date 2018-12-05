@@ -8,7 +8,7 @@ public class StaticClass {
     public static final String SHARE_IS_FIRST = "isFirst";
 
     //Bugly key
-    public static final String BUGLY_APP_ID = "2ab08108d0";
+    public static final String BUGLY_APP_ID = "b90c5646d3";
     //Bmob key
     public static final String BMOB_APP_ID = "752808db335cdce2aea8781721ccd04d";
 
