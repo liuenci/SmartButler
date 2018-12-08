@@ -62,6 +62,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.tv_forget:
+                startActivity(new Intent(this, ForgetPasswordActivity.class));
+                break;
             case R.id.btn_registered:
                 startActivity(new Intent(this, RegisteredActivity.class));
                 break;
