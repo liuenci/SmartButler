@@ -10,7 +10,7 @@ public class StaticClass {
     //Bugly key
     public static final String BUGLY_APP_ID = "b90c5646d3";
     //Bmob key
-    public static final String BMOB_APP_ID = "752808db335cdce2aea8781721ccd04d";
+    public static final String BMOB_APP_ID = "e5f077eeab0a03489c744f4ed67dd3d5";
 
     //快递Key
     public static final String COURIER_KEY = "1af43b4fd1c9ecf97493233f6769b749";
