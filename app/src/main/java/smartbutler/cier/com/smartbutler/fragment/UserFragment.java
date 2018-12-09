@@ -22,6 +22,7 @@ import java.io.File;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
+import de.hdodenhof.circleimageview.CircleImageView;
 import smartbutler.cier.com.smartbutler.R;
 import smartbutler.cier.com.smartbutler.entity.MyUser;
 import smartbutler.cier.com.smartbutler.ui.LoginActivity;
@@ -39,6 +40,8 @@ public class UserFragment extends Fragment implements View.OnClickListener {
     private EditText et_desc;
     //更新按钮
     private Button btn_update_ok;
+    //圆形头像
+    private CircleImageView profile_image;
     private CustomDialog dialog;
 
     private Button btn_camera;
@@ -76,6 +79,8 @@ public class UserFragment extends Fragment implements View.OnClickListener {
         btn_update_ok = (Button) view.findViewById(R.id.btn_update_ok);
         btn_update_ok.setOnClickListener(this);
 
+        profile_image = (CircleImageView) view.findViewById(R.id.profile_image);
+        profile_image.setOnClickListener(this);
 
 
 
@@ -170,6 +175,9 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                     Toast.makeText(getActivity(), getString(R.string.text_tost_empty), Toast.LENGTH_SHORT).show();
                 }
                 break;
+            case R.id.profile_image:
+                dialog.show();
+                break;
             case R.id.btn_cancel:
                 dialog.dismiss();
                 break;
@@ -178,6 +186,12 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_picture:
                 toPicture();
+                break;
+            case R.id.tv_courier:
+//                startActivity(new Intent(getActivity(), CourierActivity.class));
+                break;
+            case R.id.tv_phone:
+//                startActivity(new Intent(getActivity(), PhoneActivity.class));
                 break;
         }
     }
@@ -260,6 +274,7 @@ public class UserFragment extends Fragment implements View.OnClickListener {
         Bundle bundle = data.getExtras();
         if (bundle != null) {
             Bitmap bitmap = bundle.getParcelable("data");
+            profile_image.setImageBitmap(bitmap);
         }
     }
 
@@ -267,5 +282,6 @@ public class UserFragment extends Fragment implements View.OnClickListener {
     public void onDestroy() {
         super.onDestroy();
         //保存
+        UtilTools.putImageToShare(getActivity(),profile_image);
     }
 }
