@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -17,6 +18,7 @@ import smartbutler.cier.com.smartbutler.MainActivity;
 import smartbutler.cier.com.smartbutler.R;
 import smartbutler.cier.com.smartbutler.entity.MyUser;
 import smartbutler.cier.com.smartbutler.utils.ShareUtils;
+import smartbutler.cier.com.smartbutler.view.CustomDialog;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -28,6 +30,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private CheckBox keep_password;
 
     private TextView tv_forget;
+    private CustomDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         tv_forget = (TextView) findViewById(R.id.tv_forget);
         tv_forget.setOnClickListener(this);
 
+        dialog = new CustomDialog(this, 100, 100, R.layout.dialog_loding, R.style.Theme_dialog, Gravity.CENTER,R.style.pop_anim_style);
+        dialog.setCancelable(false);
         boolean isKeep = ShareUtils.getBoolean(this, "keeppass", false);
         keep_password.setChecked(isKeep);
 
@@ -74,6 +79,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String password = et_password.getText().toString().trim();
                 //2.判断是否为空
                 if (!TextUtils.isEmpty(name) & !TextUtils.isEmpty(password)) {
+                    dialog.show();
                     //登录
                     final MyUser user = new MyUser();
                     user.setUsername(name);
@@ -81,6 +87,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     user.login(new SaveListener<MyUser>() {
                         @Override
                         public void done(MyUser myUser, BmobException e) {
+                            dialog.dismiss();
                             //判断结果
                             if (e == null) {
                                 //判断邮箱是否验证
