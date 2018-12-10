@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import java.io.File;
 
+import cier.com.R;
 import cier.com.entity.MyUser;
 import cier.com.ui.CourierActivity;
 import cier.com.ui.LoginActivity;
@@ -30,8 +31,6 @@ import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
 import de.hdodenhof.circleimageview.CircleImageView;
-
-import smartbutler.cier.com.smartbutler.R;
 
 public class UserFragment extends Fragment implements View.OnClickListener {
     private Button btn_exit_user;

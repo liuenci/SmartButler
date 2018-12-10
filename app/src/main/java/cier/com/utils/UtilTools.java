@@ -14,8 +14,8 @@ import android.widget.TextView;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
-import cier.com.utils.ShareUtils;
-import smartbutler.cier.com.smartbutler.R;
+import cier.com.R;
+
 
 public class UtilTools {
 

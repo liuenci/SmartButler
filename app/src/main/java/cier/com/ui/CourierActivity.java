@@ -28,11 +28,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import cier.com.R;
 import cier.com.adapter.CourierAdapter;
 import cier.com.entity.CourierData;
 import cier.com.utils.L;
 import cier.com.utils.StaticClass;
-import smartbutler.cier.com.smartbutler.R;
 
 public class CourierActivity extends BaseActivity implements View.OnClickListener {
 

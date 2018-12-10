@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import smartbutler.cier.com.smartbutler.R;
+import cier.com.R;
 
 public class WechatFragment extends Fragment{
     @Override

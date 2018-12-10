@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(smartbutler.cier.com.smartbutler.R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         //去掉阴影
         getSupportActionBar().setElevation(0);
         initData();
@@ -63,12 +63,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //初始化View
     @SuppressLint("RestrictedApi")
     private void initView() {
-        fab_setting = (FloatingActionButton) findViewById(smartbutler.cier.com.smartbutler.R.id.fab_setting);
+        fab_setting = (FloatingActionButton) findViewById(R.id.fab_setting);
         fab_setting.setOnClickListener(this);
         // 默认隐藏
         fab_setting.setVisibility(View.GONE);
-        mTabLayout = (TabLayout) findViewById(smartbutler.cier.com.smartbutler.R.id.mTabLayout);
-        mViewPager = (ViewPager) findViewById(smartbutler.cier.com.smartbutler.R.id.mViewPager);
+        mTabLayout = (TabLayout) findViewById(R.id.mTabLayout);
+        mViewPager = (ViewPager) findViewById(R.id.mViewPager);
         //预加载
         mViewPager.setOffscreenPageLimit(mFragment.size());
 
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case smartbutler.cier.com.smartbutler.R.id.fab_setting:
+            case R.id.fab_setting:
                 startActivity(new Intent(this, SettingActivity.class));
                 break;
         }

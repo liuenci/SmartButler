@@ -6,7 +6,8 @@ import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import smartbutler.cier.com.smartbutler.R;
+import cier.com.R;
+
 
 public class CustomDialog  extends Dialog {
     //定义模板

@@ -7,10 +7,11 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import cier.com.R;
 import cier.com.utils.ShareUtils;
 import cier.com.utils.StaticClass;
 import cier.com.utils.UtilTools;
-import smartbutler.cier.com.smartbutler.R;
+
 
 public class SplashActivity extends AppCompatActivity {
 

@@ -3,7 +3,8 @@ package cier.com.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import smartbutler.cier.com.smartbutler.R;
+import cier.com.R;
+
 
 public class SettingActivity extends BaseActivity{
     @Override

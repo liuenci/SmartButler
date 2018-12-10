@@ -13,12 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cier.com.MainActivity;
+import cier.com.R;
 import cier.com.entity.MyUser;
 import cier.com.utils.ShareUtils;
 import cier.com.view.CustomDialog;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
-import smartbutler.cier.com.smartbutler.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 

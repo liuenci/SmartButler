@@ -7,10 +7,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import cier.com.R;
 import cier.com.entity.MyUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
-import smartbutler.cier.com.smartbutler.R;
 
 public class ForgetPasswordActivity extends BaseActivity implements View.OnClickListener{
 

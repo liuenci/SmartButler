@@ -13,11 +13,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import cier.com.MainActivity;
+import cier.com.R;
 import cier.com.utils.L;
 import cier.com.utils.UtilTools;
-import smartbutler.cier.com.smartbutler.R;
 
 public class GuideActivity extends AppCompatActivity implements View.OnClickListener {
     private ViewPager mViewPager;

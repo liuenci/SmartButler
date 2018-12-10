@@ -23,9 +23,9 @@ import com.kymjs.rxvolley.client.HttpCallback;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import cier.com.R;
 import cier.com.utils.L;
 import cier.com.utils.StaticClass;
-import smartbutler.cier.com.smartbutler.R;
 
 public class PhoneActivity extends BaseActivity implements View.OnClickListener {
 

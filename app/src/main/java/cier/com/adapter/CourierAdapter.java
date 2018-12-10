@@ -19,8 +19,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import cier.com.R;
 import cier.com.entity.CourierData;
-import smartbutler.cier.com.smartbutler.R;
 
 public class CourierAdapter extends BaseAdapter {
 
