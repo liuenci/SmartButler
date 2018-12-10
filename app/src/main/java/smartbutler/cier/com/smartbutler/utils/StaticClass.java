@@ -13,7 +13,7 @@ public class StaticClass {
     public static final String BMOB_APP_ID = "e5f077eeab0a03489c744f4ed67dd3d5";
 
     //快递Key
-    public static final String COURIER_KEY = "1af43b4fd1c9ecf97493233f6769b749";
+    public static final String COURIER_KEY = "0404942627c602546af2f2001a372982";
 
     //归属地Key
     public static final String PHONE_KEY = "22a6ba14995ce26dd0002216be51dabb";

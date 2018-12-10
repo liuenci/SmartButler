@@ -25,6 +25,7 @@ import cn.bmob.v3.listener.UpdateListener;
 import de.hdodenhof.circleimageview.CircleImageView;
 import smartbutler.cier.com.smartbutler.R;
 import smartbutler.cier.com.smartbutler.entity.MyUser;
+import smartbutler.cier.com.smartbutler.ui.CourierActivity;
 import smartbutler.cier.com.smartbutler.ui.LoginActivity;
 import smartbutler.cier.com.smartbutler.utils.L;
 import smartbutler.cier.com.smartbutler.utils.UtilTools;
@@ -188,7 +189,7 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                 toPicture();
                 break;
             case R.id.tv_courier:
-//                startActivity(new Intent(getActivity(), CourierActivity.class));
+                startActivity(new Intent(getActivity(), CourierActivity.class));
                 break;
             case R.id.tv_phone:
 //                startActivity(new Intent(getActivity(), PhoneActivity.class));
