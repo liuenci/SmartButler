@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="smartbutler.cier.com.smartbutler">
+    package="cier.com">
     <uses-permission android:name="android.permission.READ_LOGS"
         tools:ignore="ProtectedPermissions" />
 
@@ -58,6 +58,11 @@
         <activity
             android:name=".ui.CourierActivity"
             android:label="@string/text_express_query" />
+
+        <!--归属地查询-->
+        <activity
+            android:name=".ui.PhoneActivity"
+            android:label="@string/text_belonging_query" />
     </application>
 
 </manifest>

@@ -45,4 +45,9 @@ dependencies {
         exclude group: 'com.squareup.okio'
         exclude group: 'io.reactivex'
     }
+    //RxVolley下载模块
+    compile('com.kymjs.rxvolley:okhttp:1.1.0') {
+        exclude group: 'com.squareup.okhttp3'
+        exclude group: 'com.squareup.okio'
+    }
 }
