@@ -33,9 +33,6 @@
             </intent-filter>
         </activity>
         <!--设置-->
-        <activity
-            android:name=".ui.SettingActivity"
-            android:label="@string/text_setting" />
         <!--主页-->
         <activity android:name=".MainActivity"/>
         <!--引导页-->

@@ -42,8 +42,6 @@ public class UserFragment extends Fragment implements View.OnClickListener {
     private EditText et_desc;
     //更新按钮
     private Button btn_update_ok;
-    //圆形头像
-    private CircleImageView profile_image;
     private CustomDialog dialog;
 
     private Button btn_camera;
@@ -80,10 +78,6 @@ public class UserFragment extends Fragment implements View.OnClickListener {
 
         btn_update_ok = (Button) view.findViewById(R.id.btn_update_ok);
         btn_update_ok.setOnClickListener(this);
-
-        profile_image = (CircleImageView) view.findViewById(R.id.profile_image);
-        profile_image.setOnClickListener(this);
-
 
 
         //初始化dialog
@@ -177,17 +171,8 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                     Toast.makeText(getActivity(), getString(R.string.text_tost_empty), Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case R.id.profile_image:
-                dialog.show();
-                break;
             case R.id.btn_cancel:
                 dialog.dismiss();
-                break;
-            case R.id.btn_camera:
-                toCamera();
-                break;
-            case R.id.btn_picture:
-                toPicture();
                 break;
             case R.id.tv_courier:
                 startActivity(new Intent(getActivity(), CourierActivity.class));
@@ -198,92 +183,11 @@ public class UserFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    public static final String PHOTO_IMAGE_FILE_NAME = "fileImg.jpg";
-    public static final int CAMERA_REQUEST_CODE = 100;
-    public static final int IMAGE_REQUEST_CODE = 101;
-    public static final int RESULT_REQUEST_CODE = 102;
-    private File tempFile = null;
 
-    //跳转相机
-    private void toCamera() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        //判断内存卡是否可用，可用的话就进行储存
-        intent.putExtra(MediaStore.EXTRA_OUTPUT,
-                Uri.fromFile(new File(Environment.getExternalStorageDirectory(), PHOTO_IMAGE_FILE_NAME)));
-        startActivityForResult(intent, CAMERA_REQUEST_CODE);
-        dialog.dismiss();
-    }
 
-    //跳转相册
-    private void toPicture() {
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType("image/*");
-        startActivityForResult(intent, IMAGE_REQUEST_CODE);
-        dialog.dismiss();
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode != getActivity().RESULT_CANCELED) {
-            switch (requestCode) {
-                //相册数据
-                case IMAGE_REQUEST_CODE:
-                    startPhotoZoom(data.getData());
-                    break;
-                //相机数据
-                case CAMERA_REQUEST_CODE:
-                    tempFile = new File(Environment.getExternalStorageDirectory(), PHOTO_IMAGE_FILE_NAME);
-                    startPhotoZoom(Uri.fromFile(tempFile));
-                    break;
-                case RESULT_REQUEST_CODE:
-                    //有可能点击舍弃
-                    if (data != null) {
-                        //拿到图片设置
-                        setImageToView(data);
-                        //既然已经设置了图片，我们原先的就应该删除
-                        if (tempFile != null) {
-                            tempFile.delete();
-                        }
-                    }
-                    break;
-            }
-        }
-    }
-
-    //裁剪
-    private void startPhotoZoom(Uri uri) {
-        if (uri == null) {
-            L.e("uri == null");
-            return;
-        }
-        Intent intent = new Intent("com.android.camera.action.CROP");
-        intent.setDataAndType(uri, "image/*");
-        //设置裁剪
-        intent.putExtra("crop", "true");
-        //裁剪宽高比例
-        intent.putExtra("aspectX", 1);
-        intent.putExtra("aspectY", 1);
-        //裁剪图片的质量
-        intent.putExtra("outputX", 320);
-        intent.putExtra("outputY", 320);
-        //发送数据
-        intent.putExtra("return-data", true);
-        startActivityForResult(intent, RESULT_REQUEST_CODE);
-    }
-
-    //设置图片
-    private void setImageToView(Intent data) {
-        Bundle bundle = data.getExtras();
-        if (bundle != null) {
-            Bitmap bitmap = bundle.getParcelable("data");
-            profile_image.setImageBitmap(bitmap);
-        }
-    }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        //保存
-        UtilTools.putImageToShare(getActivity(),profile_image);
     }
 }

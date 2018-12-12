@@ -19,7 +19,7 @@
     <string name="text_girl">美女社区</string>
     <string name="text_user_info">个人中心</string>
 
-    <string name="text_hello_tts">性感松哥在线陪聊！</string>
+    <string name="text_hello_tts">您好，我是小蓦！</string>
     <string name="text_more_length">输入长度超出限制</string>
     <string name="text_tost_empty">输入框不能为空</string>
     <string name="text_welfare">福利</string>
@@ -33,7 +33,7 @@
     <string name="text_two_input_not_consistent">两次输入的密码不一致</string>
     <string name="text_app_name">应用名:</string>
     <string name="text_version">版本号:</string>
-    <string name="text_website_address">官网:www.imooc.com</string>
+    <string name="text_website_address">官网:www.liuenci.cn</string>
     <string name="text_email_send_ok">邮箱已经发送至：</string>
     <string name="text_email_send_no">邮箱发送失败</string>
     <string name="reset_successfully">重置密码成功</string>
